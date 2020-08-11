@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content">
+    <div class="">
+        <div class="page-header-title">
+            <h4 class="page-title">Tecnologías</h4>
+            <div style="text-align:center;">
+                <button type="button" class="btn btn-success waves-effect waves-light"
+                        onClick=" window.location.href='/tecnologiacreate' " style="text-align:center;">Añadir tecnología
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="page-content-wrapper">
+        <div class="container">
+            <!-- Content page -->
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr style="color:#0E2EB0">
+                            <th font color="red">Aplicación</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Versión</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for tecnologia in tecnologia_list %}
+                        <tr>
+                            
+                            <td>{{ tecnologia.aplicacion }}</td>
+                            <td>{{ tecnologia.nombre }}</td>
+                            <td>{{ tecnologia.descripcion }}</td>
+                            <td>{{ tecnologia.version }}</td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                    <div style="text-align:center;">
+                        <button type="button" class="btn btn-primary waves-effect waves-light"
+                                onClick=" window.location.href='/' ">
+                            Back
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
